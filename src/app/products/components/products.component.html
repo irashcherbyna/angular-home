@@ -1,0 +1,28 @@
+<div class="products">
+  <h3>Product List</h3>
+  <table class="products__table">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Photo</th>
+      <th>Category</th>
+      <th>isAvailable</th>
+      <th>Buy</th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <img src="assets/{{product.photo}}" width="50">
+      </td>
+      <td>{{product.category}}</td>
+      <td>{{product.isAvailable}}</td>
+      <td>
+        <button (click)="onBuy(product.id)">Buy</button>
+      </td>
+    </tr>
+  </table>
+</div>
+

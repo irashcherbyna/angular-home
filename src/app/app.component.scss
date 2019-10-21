@@ -1,0 +1,11 @@
+.shop {
+  display: flex;
+}
+
+.shop-column__products {
+  flex: 60%;
+}
+
+.shop-column__cart {
+  flex: 30%;
+}

@@ -25,6 +25,7 @@ export class ProductsService {
   }
 
   private getSelectedIndex(id: string): number {
+    // можно применить метод Array.prototype.findIndex()
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {
         return i;

@@ -21,6 +21,8 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.findAll();
   }
 
+  // в шаблоне стоит product.id в качестве значения параметра,
+  // поэтому не понятно почему ищем объект по индексу this.products[id]
   onBuy(id: string): void {
     this.cartService.addToCart(this.products[id]);
   }

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {CartService} from '../services/cart.service';
-import {Cart} from '../models/Cart';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { Cart } from '../models/Cart';
 
 @Component({
   selector: 'app-cart',
@@ -8,13 +8,10 @@ import {Cart} from '../models/Cart';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
   isOrderCompleted = false;
   carts: Cart[] = [];
 
-  constructor(
-    private cartService: CartService
-  ) { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.carts = this.cartService.getCarts();
@@ -25,23 +22,17 @@ export class CartComponent implements OnInit {
   }
 
   getCartTotal(): number {
+    // попробуйте использовать reduce
     let total = 0;
-    this.carts.forEach(
-      cart => total += cart.quantity
-    );
+    this.carts.forEach(cart => (total += cart.quantity));
     return total;
   }
 
   getTotalAmount(): number {
     let amount = 0;
-    this.carts.forEach(
-      cart => amount += cart.product.price
-    );
+    this.carts.forEach(cart => (amount += cart.product.price));
     return amount;
   }
 
-  onConfirm(): void {
-
-  }
-
+  onConfirm(): void {}
 }

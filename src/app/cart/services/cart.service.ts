@@ -9,6 +9,7 @@ export class CartService {
 
   addToCart(p: Product): void {
     for (const cart of this.carts) {
+      // не самый лучший вариант, может по id сравнивать?
         if (cart.product === p) {
         cart.quantity++;
         return;
